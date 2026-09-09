@@ -1,0 +1,824 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cevichería Del Mar - Responsive</title>
+
+    <!-- Vinculación de Iconos (FontAwesome) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Vinculación de Tipografía (Montserrat) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Hoja de Estilos Personalizada -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ENCABEZADO PRINCIPAL -->
+    <header class="site-header">
+      <!-- 1. Barra Superior (Top Bar) -->
+      <div class="top-bar">
+        <div class="top-bar-left">
+          <span
+            ><i class="fa-regular fa-clock"></i>
+            <strong>Lunes a Domingo:</strong> 11:00 am - 10:00 pm</span
+          >
+          <span class="separator">|</span>
+          <span><i class="fa-solid fa-motorcycle"></i> Delivery rápido</span>
+        </div>
+        <div class="top-bar-right">
+          <span>Síguenos:</span>
+          <a href="#" aria-label="Facebook"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+          <a href="#" aria-label="Instagram"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="#" aria-label="TikTok"
+            ><i class="fa-brands fa-tiktok"></i
+          ></a>
+        </div>
+      </div>
+
+      <!-- 2. Navegación Principal -->
+      <nav class="main-nav">
+        <!-- Logo -->
+        <div class="logo">
+          <a href="index.html">
+            <!-- Reemplaza con tu logo real o usa texto para probar -->
+            <img src="img/logo.png" alt="Cevichería Del Mar" />
+          </a>
+        </div>
+
+        <!-- BOTÓN HAMBURGUESA (Nuevo - Oculto en PC) -->
+        <button class="menu-toggle" id="mobile-menu" aria-label="Abrir menú">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <!-- Menú de Enlaces (Se volverá lateral en móvil) -->
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#inicio" class="active">INICIO</a></li>
+          <li><a href="carta.html">CARTA</a></li>
+          <li><a href="#combos">COMBOS</a></li>
+          <li><a href="#combos">PROMOCIONES</a></li>
+          <li><a href="#nosotros">NOSOTROS</a></li>
+          <li><a href="#nosotros">CONTACTO</a></li>
+          <!-- Botón de WhatsApp DENTRO del menú móvil -->
+          <li class="mobile-only">
+            <a
+              href="https://wa.me/51964174746"
+              class="btn-whatsapp-mobile"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-whatsapp"></i> PEDIR POR WHATSAPP
+            </a>
+          </li>
+        </ul>
+
+        <!-- Sección de Acciones (Derecha - PC) -->
+        <div class="nav-actions">
+          <!-- Oculto en móvil muy pequeño si es necesario -->
+          <a
+            href="https://wa.me/51964174746"
+            class="btn-whatsapp hide-mobile"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-whatsapp"></i> PEDIR POR WHATSAPP
+          </a>
+
+          <!-- El carrito casi siempre se mantiene visible -->
+          <div class="cart-container" id="cartButton">
+            <span class="cart-total hide-mobile" id="headerCartTotal"
+              >S/ 0.00</span
+            >
+            <div class="cart-icon">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span class="cart-badge" id="cartCount">0</span>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- SECCIÓN HERO RESPONSIVA -->
+    <section class="hero-section">
+      <!-- Hero Desktop / Tablet (Imagen horizontal) -->
+      <div class="hero-banner hero-desktop">
+        <img
+          src="img/hero_computadora.jpeg"
+          alt="Evans Marisquería - Especialidades Marinas"
+        />
+        <div class="hero-overlay">
+          <div class="hero-content">
+            <h1>El Auténtico Sabor del Mar</h1>
+            <p>Pescados y mariscos frescos con la mejor sazón marina.</p>
+            <a href="carta.html" class="btn-hero">Ver la Carta</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Mobile (Imagen vertical) -->
+      <div class="hero-banner hero-mobile">
+        <img
+          src="img/hero_movil.jpeg"
+          alt="Evans Marisquería - Especialidades Marinas"
+        />
+        <div class="hero-overlay">
+          <div class="hero-content">
+            <h1>Sabor Marino Fresco</h1>
+            <p>Realiza tu pedido directo por WhatsApp.</p>
+            <a
+              href="https://wa.me/51964174746"
+              class="btn-hero-wa"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-whatsapp"></i> Pedir Ahora
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Capa de superposición (overlay) para cerrar el menú al hacer clic fuera -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+
+    <main class="container">
+      <!-- SECCIÓN 1: EXPLORA NUESTRA CARTA -->
+      <section class="menu-categories">
+        <div class="section-title">
+          <h2>
+            <span class="wave">~~</span> Explora <strong>nuestra carta</strong>
+            <span class="wave">~~</span>
+          </h2>
+        </div>
+
+        <div class="categories-grid">
+          <div class="category-card">
+            <img src="img/ceviche.png" alt="Ceviches" />
+            <h3>Ceviches</h3>
+          </div>
+          <div class="category-card">
+            <img src="img/chicharrones.png" alt="Chicharrones" />
+            <h3 class="highlight-orange">Chicharrones</h3>
+          </div>
+          <div class="category-card">
+            <img src="img/arroces.png" alt="Arroces" />
+            <h3 class="highlight-green">Arroces</h3>
+          </div>
+          <div class="category-card">
+            <img src="img/combos.png" alt="Combos" />
+            <h3 class="highlight-purple">Combos</h3>
+          </div>
+          <div class="category-card">
+            <img src="img/bebidas.png" alt="Bebidas" />
+            <h3>Bebidas</h3>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 2: PRODUCTOS DESTACADOS -->
+      <section class="featured-products">
+        <div class="section-header">
+          <h2>Productos <strong>destacados</strong></h2>
+          <a href="carta.html" class="view-all"
+            >Ver toda la carta <i class="fa-solid fa-chevron-right"></i
+          ></a>
+        </div>
+
+        <div class="products-grid">
+          <!-- COMBO 1: Combo I -->
+          <article class="product-card" data-category="combos">
+            <div class="product-img">
+              <img src="img/combo_1.jpeg" alt="Combo I" />
+            </div>
+            <div class="product-info">
+              <h4>Combo I</h4>
+              <p>Ceviche + Chicharrón + Chilcano + Leche de Tigre.</p>
+              <span class="price">S/ 22.00</span>
+              <button
+                class="btn-add-cart"
+                data-id="c1"
+                data-name="Combo I"
+                data-price="22.00"
+                data-image="img/combo_1.jpeg"
+              >
+                <i class="fa-solid fa-cart-shopping"></i> AGREGAR
+              </button>
+            </div>
+          </article>
+
+          <!-- COMBO 2: Combo V -->
+          <article class="product-card" data-category="combos">
+            <div class="product-img">
+              <img src="img/combo_5.jpeg" alt="Combo V" />
+            </div>
+            <div class="product-info">
+              <h4>Combo V</h4>
+              <p>Arroz con Mariscos + Ceviche + Chicharrón.</p>
+              <span class="price">S/ 31.00</span>
+              <button
+                class="btn-add-cart"
+                data-id="c5"
+                data-name="Combo V"
+                data-price="31.00"
+                data-image="img/combo_5.jpeg"
+              >
+                <i class="fa-solid fa-cart-shopping"></i> AGREGAR
+              </button>
+            </div>
+          </article>
+
+          <!-- ESPECIALIDAD: Súper Ceviche Evans -->
+          <article class="product-card" data-category="especialidades">
+            <span class="badge badge-popular">Popular</span>
+            <div class="product-img">
+              <img
+                src="img/super_ceviche_evans.jpeg"
+                alt="Súper Ceviche Evans"
+              />
+            </div>
+            <div class="product-info">
+              <h4>Súper Ceviche Evans</h4>
+              <p>Acompañado de chicharrón de pescado.</p>
+              <span class="price">S/ 30.00</span>
+              <button
+                class="btn-add-cart"
+                data-id="e1"
+                data-name="Súper Ceviche Evans"
+                data-price="30.00"
+                data-image="img/super_ceviche_evans.jpeg"
+              >
+                <i class="fa-solid fa-cart-shopping"></i> AGREGAR
+              </button>
+            </div>
+          </article>
+
+          <!-- FRITURA: Jalea -->
+          <article class="product-card" data-category="sopas">
+            <div class="product-img">
+              <img src="img/jalea.jpeg" alt="Jalea" />
+            </div>
+            <div class="product-info">
+              <h4>Jalea</h4>
+              <p>Fritura mixta marina crujiente con salsa criolla.</p>
+              <span class="price">S/ 32.00</span>
+              <button
+                class="btn-add-cart"
+                data-id="s4"
+                data-name="Jalea"
+                data-price="32.00"
+                data-image="img/jalea.jpeg"
+              >
+                <i class="fa-solid fa-cart-shopping"></i> AGREGAR
+              </button>
+            </div>
+          </article>
+
+          <!-- ARROZ: Arroz Chaufa de Mariscos -->
+          <article class="product-card" data-category="arroces">
+            <div class="product-img">
+              <img
+                src="img/chaufa_de_mariscos.jpeg"
+                alt="Arroz Chaufa de Mariscos"
+              />
+            </div>
+            <div class="product-info">
+              <h4>Arroz Chaufa de Mariscos</h4>
+              <p>Arroz salteado con mariscos surtidos al wok.</p>
+              <span class="price">S/ 19.00</span>
+              <button
+                class="btn-add-cart"
+                data-id="a3"
+                data-name="Arroz Chaufa de Mariscos"
+                data-price="19.00"
+                data-image="img/chaufa_de_mariscos.jpeg"
+              >
+                <i class="fa-solid fa-cart-shopping"></i> AGREGAR
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <!-- Combos -->
+    <!-- SECCIÓN: COMBOS Y PROMOCIONES IMPERDIBLES -->
+    <section class="combos-section" id="combos">
+      <div class="combos-container">
+        <!-- Encabezado con olas -->
+        <div class="combos-title">
+          <h2>
+            <span class="wave">~~</span> Combos y
+            <strong>promociones</strong> imperdibles
+            <span class="wave">~~</span>
+          </h2>
+        </div>
+
+        <!-- Wrapper principal del slider con botones -->
+        <div class="slider-wrapper">
+          <button
+            class="slider-btn prev-btn"
+            id="prevBtn"
+            aria-label="Anterior"
+          >
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+
+          <!-- Track deslizable con los combos reales y la tarjeta promocional -->
+          <div class="slider-track" id="sliderTrack">
+            <!-- Combo 1: Combo I -->
+            <article class="combo-card">
+              <span class="badge-saving">Combo I</span>
+              <div class="combo-img">
+                <img src="img/combo_1.jpeg" alt="Combo I" />
+              </div>
+              <div class="combo-info">
+                <h3>Combo I</h3>
+                <p>Ceviche + Chicharrón + Chilcano + Leche de Tigre.</p>
+                <span class="combo-price">S/ 22.00</span>
+                <button
+                  class="btn-order btn-add-cart"
+                  data-id="c1"
+                  data-name="Combo I"
+                  data-price="22.00"
+                  data-image="img/combo_1.jpeg"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i> AGREGAR
+                </button>
+              </div>
+            </article>
+
+            <!-- Combo 2: Combo II -->
+            <article class="combo-card">
+              <span class="badge-saving">Combo II</span>
+              <div class="combo-img">
+                <img src="img/combo_2.png" alt="Combo II" />
+              </div>
+              <div class="combo-info">
+                <h3>Combo II</h3>
+                <p>Arroz con Mariscos + Ceviche + Chilcano + Leche de Tigre.</p>
+                <span class="combo-price">S/ 23.00</span>
+                <button
+                  class="btn-order btn-add-cart"
+                  data-id="c2"
+                  data-name="Combo II"
+                  data-price="23.00"
+                  data-image="img/combo_2.png"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i> AGREGAR
+                </button>
+              </div>
+            </article>
+
+            <!-- Card 4: Promoción Leche de Tigre -->
+            <article class="promo-banner-card">
+              <div class="promo-content">
+                <h4>¿Primera vez?</h4>
+                <p class="promo-highlight">
+                  Te damos <strong>LECHE DE TIGRE GRATIS</strong>
+                </p>
+                <p class="promo-sub">en tu primer pedido</p>
+                <div class="promo-img">
+                  <img
+                    src="img/leche_tigre_promo.png"
+                    alt="Leche de Tigre Gratis"
+                  />
+                </div>
+              </div>
+            </article>
+
+            <!-- Combo 4: Combo IV -->
+            <article class="combo-card">
+              <span class="badge-saving">Combo IV</span>
+              <div class="combo-img">
+                <img src="img/combo_4.jpeg" alt="Combo IV" />
+              </div>
+              <div class="combo-info">
+                <h3>Combo IV</h3>
+                <p>
+                  Ceviche + Chicharrón + Arroz con Mariscos + Leche de Tigre +
+                  Chilcano.
+                </p>
+                <span class="combo-price">S/ 29.00</span>
+                <button
+                  class="btn-order btn-add-cart"
+                  data-id="c4"
+                  data-name="Combo IV"
+                  data-price="29.00"
+                  data-image="img/combo_4.jpeg"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i> AGREGAR
+                </button>
+              </div>
+            </article>
+
+            <!-- Combo 5: Combo V -->
+            <article class="combo-card">
+              <span class="badge-saving">Combo V</span>
+              <div class="combo-img">
+                <img src="img/combo_5.jpeg" alt="Combo V" />
+              </div>
+              <div class="combo-info">
+                <h3>Combo V</h3>
+                <p>Arroz con Mariscos + Ceviche + Chicharrón.</p>
+                <span class="combo-price">S/ 31.00</span>
+                <button
+                  class="btn-order btn-add-cart"
+                  data-id="c5"
+                  data-name="Combo V"
+                  data-price="31.00"
+                  data-image="img/combo_5.jpeg"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i> AGREGAR
+                </button>
+              </div>
+            </article>
+
+            <!-- Combo 6: Combo VI -->
+            <article class="combo-card">
+              <span class="badge-saving">Combo VI</span>
+              <div class="combo-img">
+                <img src="img/combo_6.jpeg" alt="Combo VI" />
+              </div>
+              <div class="combo-info">
+                <h3>Combo VI</h3>
+                <p>Chaufa de Mariscos + Ceviche + Chicharrón.</p>
+                <span class="combo-price">S/ 31.00</span>
+                <button
+                  class="btn-order btn-add-cart"
+                  data-id="c6"
+                  data-name="Combo VI"
+                  data-price="31.00"
+                  data-image="img/combo_6.jpeg"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i> AGREGAR
+                </button>
+              </div>
+            </article>
+
+            <!-- Combo 7 -->
+            <article class="combo-card">
+              <span class="badge-saving">Combo VII</span>
+              <div class="combo-img">
+                <img src="img/combo_7.jpeg" alt="Combo VII" />
+              </div>
+              <div class="combo-info">
+                <h3>Combo VII</h3>
+                <p>Arroz Chaufa con Mariscos + Ceviche + Chicharrón.</p>
+                <span class="combo-price">S/ 36.00</span>
+                <button
+                  class="btn-order btn-add-cart"
+                  data-id="c7"
+                  data-name="Combo VII"
+                  data-price="36.00"
+                  data-image="img/combo_7.jpeg"
+                >
+                  <i class="fa-solid fa-cart-shopping"></i> AGREGAR
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <button
+            class="slider-btn next-btn"
+            id="nextBtn"
+            aria-label="Siguiente"
+          >
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- SECCIÓN: ¿POR QUÉ ELEGIRNOS? -->
+    <section class="features-section">
+      <div class="features-container">
+        <div class="section-title">
+          <h2>
+            <span class="wave">~~</span> ¿Por qué <strong>elegirnos?</strong>
+            <span class="wave">~~</span>
+          </h2>
+        </div>
+
+        <div class="features-grid">
+          <!-- Ítem 1 -->
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fa-solid fa-fish"></i>
+            </div>
+            <div class="feature-text">
+              <h3>Ingredientes <strong>frescos</strong></h3>
+              <p>Seleccionamos lo mejor del mar todos los días.</p>
+            </div>
+          </div>
+
+          <!-- Ítem 2 -->
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fa-solid fa-utensils"></i>
+            </div>
+            <div class="feature-text">
+              <h3>Recetas <strong>tradicionales</strong></h3>
+              <p>El sabor auténtico que nos caracteriza.</p>
+            </div>
+          </div>
+
+          <!-- Ítem 3 -->
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fa-solid fa-motorcycle"></i>
+            </div>
+            <div class="feature-text">
+              <h3>Delivery <strong>rápido</strong></h3>
+              <p>Tu pedido llega fresco y a tiempo.</p>
+            </div>
+          </div>
+
+          <!-- Ítem 4 -->
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <div class="feature-text">
+              <h3>Pago 100% <strong>seguro</strong></h3>
+              <p>Protegemos tus datos y tus compras.</p>
+            </div>
+          </div>
+
+          <!-- Ítem 5 -->
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fa-solid fa-face-smile-beam"></i>
+            </div>
+            <div class="feature-text">
+              <h3>Clientes <strong>satisfechos</strong></h3>
+              <p>Nos recomiendan por nuestro sabor y servicio.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SECCIÓN: BANNER DE LLAMADA A LA ACCIÓN (CTA) -->
+    <section class="cta-banner">
+      <!-- Imagen decorativa izquierda (cebollas, ajíes, limones) -->
+      <div class="cta-decor left-decor">
+        <img src="img/ingredientes_1.png" alt="Ingredientes frescos" />
+      </div>
+
+      <div class="cta-container">
+        <!-- Textos del banner -->
+        <div class="cta-text">
+          <h2>¿Antojo de algo delicioso?</h2>
+          <p>
+            Pide ahora y disfruta del
+            <span class="cursive-text">sabor del mar</span>
+            <span class="heart-icon">♡</span>
+          </p>
+        </div>
+
+        <!-- Acciones/Botones -->
+        <div class="cta-buttons">
+          <a href="#menu" class="btn-primary-cta">
+            <i class="fa-solid fa-motorcycle"></i> PEDIR AHORA
+          </a>
+          <a
+            href="https://wa.me/51964174746"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-whatsapp-cta"
+          >
+            <i class="fa-brands fa-whatsapp"></i> PEDIR POR WHATSAPP
+          </a>
+        </div>
+      </div>
+
+      <!-- Imagen decorativa derecha (limones, chiles) -->
+      <div class="cta-decor right-decor">
+        <img src="img/ingredientes_2.png" alt="Ingredientes marinos" />
+      </div>
+    </section>
+    <!-- PIE DE PÁGINA (FOOTER) -->
+    <footer class="main-footer" id="nosotros">
+      <div class="footer-container">
+        <!-- Columna 1: Logo, Descripción y Redes -->
+        <div class="footer-col col-brand">
+          <div class="footer-logo">
+            <div class="logo">
+              <img src="img/logo.png" alt="" />
+            </div>
+          </div>
+          <p class="brand-desc">
+            En Evans Marisqueria llevamos lo mejor del mar a tu mesa. Frescura,
+            sabor y pasión en cada plato.
+          </p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="TikTok"
+              ><i class="fa-brands fa-tiktok"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Columna 2: Enlaces Rápidos -->
+        <div class="footer-col">
+          <h3>Enlaces rápidos</h3>
+          <ul class="footer-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#carta">Carta</a></li>
+            <li><a href="#combos">Combos</a></li>
+            <li><a href="#promociones">Promociones</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: Información -->
+        <div class="footer-col">
+          <h3>Información</h3>
+          <div class="info-item">
+            <i class="fa-regular fa-clock"></i>
+            <div>
+              <p>Lunes a Domingo</p>
+              <span>09:00 am - 05:00 pm</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <p>Montes y Colinas N° 501</p>
+              <span>"Pio Pata" El Tambo, Huancayo</span>
+            </div>
+          </div>
+          <a
+            href="https://maps.google.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="map-link"
+          >
+            <i class="fa-regular fa-compass"></i> Ver en Google Maps
+          </a>
+        </div>
+
+        <!-- Columna 4: Contáctanos -->
+        <div class="footer-col">
+          <h3>Contáctanos</h3>
+          <div class="contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <p>964 174 746</p>
+              <p>975 188 821</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i class="fa-brands fa-instagram"></i>
+            <p>@evans.marisqueria</p>
+          </div>
+        </div>
+
+        <!-- Columna 5: Métodos de Pago (Solo Yape y Plin) -->
+        <div class="footer-col">
+          <h3>Métodos de pago</h3>
+          <div class="payment-methods">
+            <div class="payment-badge yape">Yape</div>
+            <div class="payment-badge plin">Plin</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Barra Inferior de Derechos de Autor -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-container">
+          <p>
+            &copy; 2026 Evans Marisqueria Since 2004. Todos los derechos
+            reservados.
+          </p>
+          <div class="legal-links">
+            <a href="#">Términos y condiciones</a>
+            <span class="separator">|</span>
+            <a href="#">Política de privacidad</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- OVERLAY DE FONDO OSCURO -->
+    <div id="cart-overlay" class="cart-overlay"></div>
+
+    <!-- OVERLAY PARA EL CARRITO LATERAL -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- PANEL LATERAL DEL CARRITO (DRAWER) -->
+    <aside class="cart-drawer" id="cart-drawer">
+      <div class="cart-header">
+        <h3>Tu Pedido</h3>
+        <button class="close-cart" id="close-cart">&times;</button>
+      </div>
+
+      <!-- Lista dinámica de ítems -->
+      <div class="cart-items" id="cart-items">
+        <p class="cart-empty-msg">Tu carrito está vacío</p>
+      </div>
+
+      <!-- Pie del Carrito con BOTÓN CONTINUAR PEDIDO -->
+      <div class="cart-footer">
+        <div class="cart-total-row">
+          <span>Total:</span>
+          <strong id="cart-total-price">S/ 0.00</strong>
+        </div>
+        <div class="cart-actions">
+          <button class="btn-clear-cart" id="clear-cart-btn">Vaciar</button>
+          <button class="btn-continue-order" id="btnContinueOrder">
+            Continuar pedido
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MODAL COMPLETA TU PEDIDO (CHECKOUT WHATSAPP) -->
+    <div class="checkout-overlay" id="checkoutOverlay">
+      <div class="checkout-modal">
+        <button class="close-checkout" id="closeCheckout">&times;</button>
+        <div class="checkout-header">
+          <span class="checkout-subtitle">CASI LISTO</span>
+          <h2>Completa tu pedido</h2>
+          <p>Estos datos se usarán para preparar el mensaje de WhatsApp.</p>
+        </div>
+
+        <form id="checkoutForm">
+          <div class="form-group">
+            <label for="clientName">Nombre</label>
+            <input
+              type="text"
+              id="clientName"
+              placeholder="Tu nombre"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="orderType">¿Cómo recibirás tu pedido?</label>
+            <select id="orderType">
+              <option value="Delivery">🛵 Delivery</option>
+              <option value="Para llevar">🛍️ Para llevar</option>
+              <option value="Consumir en el local">
+                🍽️ Consumir en el local
+              </option>
+            </select>
+          </div>
+
+          <!-- Campo dinámico de dirección -->
+          <div class="form-group" id="addressGroup">
+            <label for="clientAddress">Dirección de entrega</label>
+            <input type="text" id="clientAddress" placeholder="Dirección" />
+          </div>
+
+          <div class="form-group">
+            <label for="orderObs">Observaciones</label>
+            <textarea
+              id="orderObs"
+              rows="3"
+              placeholder="Ej.: sin cebolla, agregar ají, etc."
+            ></textarea>
+          </div>
+
+          <div class="checkout-summary">
+            <span>Total del pedido</span>
+            <strong id="modalTotalPrice">S/ 0.00</strong>
+          </div>
+
+          <button type="submit" class="btn-whatsapp-submit">
+            <span class="dot-online"></span> Enviar pedido por WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a
+      href="https://wa.me/51964174746"
+      class="btn-whatsapp-float"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat en WhatsApp"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Vinculación de JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
